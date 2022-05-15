@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get :cook
     end
 
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [ :new, :create ]
   end
+  resources :reviews, only: [ :destroy ]
 end

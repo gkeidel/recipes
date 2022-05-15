@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :find_recipe
+  before_action :find_recipe, except: [ :destroy ]
   
   def new
     @review = Review.new
@@ -8,10 +8,18 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.recipe = @recipe
-    @review.save
-    redirect_to recipe_path(@recipe)
+    if @review.save
+      redirect_to recipe_path(@recipe)
+    else
+      render :new
+    end
   end
   
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to recipe_path(@review.recipe)
+  end
   private
 
   def find_recipe
