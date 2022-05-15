@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   # collection
   # member
 
+  root to: 'recipes#index'
+  
   resources :recipes do 
     # /recipes/...
     collection do
