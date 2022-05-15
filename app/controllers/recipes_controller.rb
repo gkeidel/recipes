@@ -1,6 +1,11 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[ show edit update destroy ]
 
+  # GET /recipes/top or /recipes.json
+  def top
+    @recipes = Recipe.where(rating: 5)
+  end
+
   # GET /recipes or /recipes.json
   def index
     @recipes = Recipe.all

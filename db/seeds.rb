@@ -14,6 +14,9 @@ puts 'Creating some recipes...'
   Recipe.create(
     name: Faker::Food.dish,
     description: Faker::Food.description,
-    rating: rand(1..5)
+    rating: rand(1..5),
+    cook_name: Faker::Name.name
   )
 end
+
+
