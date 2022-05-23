@@ -21,7 +21,10 @@ gem 'turbolinks', '~> 5'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'simple_form', github: 'heartcombo/simple_form'
+
 gem 'faker'
+
+gem 'devise'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
